@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+<div class="containers" style="background: #3f474e; border-radius: 40px; padding-bottom: 25px">
+    <div class="row d-flex justify-content-center">
+        <div class="col-7">
+            <h1 style="text-align: center; color: white">News</h1>
+            <div class="row d-flex justify-content-center" >
+                {% for subject in subjects %}
+                <div class="card text-white bg-dark mb-0" style="width: 18rem; margin: 40px; border-radius: 25px">
+                    <img class="card-img-top" style="border-radius: 25px" src="{% static subject.image %}">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ subject.subject }}</h5>
+                        <a href="{{subject.link}}" class="mt-auto btn btn-lg btn-block btn-outline-primary">
+                            Continue
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-4">
+            <h1 style="text-align: center; color: white">Polski kącik</h1>
+            <div class="row d-flex justify-content-center">
+                <div class="card text-white bg-dark mb-0" style="width: 18rem; margin: 40px; border-radius: 25px">
+                    <img class="card-img-top" style="border-radius: 25px" src="/static/img/polska.jpg">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Wiadomości z Polski</h5>
+                        <a href="/polskienewsy/" class="mt-auto btn btn-lg btn-block btn-outline-primary">
+                            Kontynuuj
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="card text-white bg-dark mb-0" style="width: 18rem; margin: 40px; border-radius: 25px">
+                    <img class="card-img-top" style="border-radius: 25px" src="/static/img/worldnewspl.jpg">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Wiadomości ze świata</h5>
+                        <a href="/worldnewspl/" class="mt-auto btn btn-lg btn-block btn-outline-primary">
+                            Kontynuuj
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"> </div>
+    </div>
+</div>
+{% endblock %}

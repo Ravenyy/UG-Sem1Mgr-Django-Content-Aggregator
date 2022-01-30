@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+<div class="containers" style="background: #3f474e; border-radius: 40px; padding-bottom: 25px">
+    <h1 style="text-align: center; color: white">Wiadomości ze świata</h1>
+    <div class="row d-flex justify-content-center" style="margin: 20px">
+
+        {% for p in swiatowe %}
+        <a href="{{p.url}}" target="_blank">
+            <div class="card text-white bg-dark mb-0" style="width: 80rem; margin:5px; border-radius: 25px">
+                <h5  class="card-header" style="background-color: #292d32; border-radius: 25px">{{p.headline}}</h5>
+
+                <div class="card-body d-flex flex-column">
+                    <p class="card-text" style="margin-bottom: -5px">{{p.text}}</p>
+
+                </div>
+            </div>
+        </a>
+         {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

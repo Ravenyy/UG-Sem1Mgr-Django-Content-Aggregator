@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+<div class="containers" style="background: #3f474e;">
+    <h1 style="text-align: center; color: white">Gaming</h1>
+    <div class="row d-flex justify-content-center" >
+
+        {% for p in gamingcontent %}
+            <div class="card text-white bg-dark mb-3" style="width: 20rem; margin: 20px">
+                <h5 class="card-header" style="background-color: #292d32;">{{p.headline}}</h5>
+
+                <div class="card-body d-flex flex-column">
+                    <p class="card-text">{{p.text}}</p>
+                <a href="{{p.url}}" class="mt-auto btn btn-lg btn-block btn-outline-primary" target="_blank"> Go! </a>
+
+                </div>
+            </div>
+         {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
